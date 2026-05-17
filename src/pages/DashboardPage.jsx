@@ -8,7 +8,6 @@ import {
   notifications,
   statCards,
   subjects,
-  weekDays,
 } from "../data/datas";
 
 function DashboardPage() {
@@ -21,11 +20,7 @@ function DashboardPage() {
           <AttendanceSection attendance={attendance} />
         </section>
 
-        <RightSidebar
-          nextLesson={nextLesson}
-          notifications={notifications}
-          weekDays={weekDays}
-        />
+        <RightSidebar nextLesson={nextLesson} notifications={notifications} />
       </div>
     </div>
   );

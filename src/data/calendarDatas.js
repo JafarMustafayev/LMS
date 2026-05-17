@@ -1,0 +1,137 @@
+export const initialEvents = [
+  {
+    id: 1,
+    title: "Dərs",
+    subject: "Proqramlaşdırmaya giriş",
+    date: "2026-05-01",
+    startTime: "10:00",
+    endTime: "11:30",
+    type: "lesson",
+  },
+  {
+    id: 2,
+    title: "Lab məşğələ",
+    subject: "Web proqramlaşdırma",
+    date: "2026-05-02",
+    startTime: "14:00",
+    endTime: "16:00",
+    type: "lab",
+  },
+  {
+    id: 3,
+    title: "Tapşırıq deadline",
+    subject: "Data strukturları",
+    date: "2026-05-07",
+    startTime: "23:59",
+    endTime: "",
+    type: "task",
+  },
+  {
+    id: 4,
+    title: "Dərs",
+    subject: "Rəqəmsal sistemlər",
+    date: "2026-05-08",
+    startTime: "10:00",
+    endTime: "11:30",
+    type: "lesson",
+  },
+  {
+    id: 5,
+    title: "Quiz",
+    subject: "Proqramlaşdırmaya giriş",
+    date: "2026-05-13",
+    startTime: "11:00",
+    endTime: "12:00",
+    type: "quiz",
+  },
+  {
+    id: 6,
+    title: "Lab məşğələ",
+    subject: "Şəbəkə texnologiyaları",
+    date: "2026-05-15",
+    startTime: "14:00",
+    endTime: "16:00",
+    type: "lab",
+  },
+  {
+    id: 7,
+    title: "Layihə təqdimatı",
+    subject: "Web proqramlaşdırma",
+    date: "2026-05-20",
+    startTime: "15:00",
+    endTime: "",
+    type: "project",
+  },
+  {
+    id: 8,
+    title: "İmtahan",
+    subject: "Proqramlaşdırma əsasları",
+    date: "2026-05-28",
+    startTime: "10:00",
+    endTime: "12:00",
+    type: "exam",
+  },
+];
+
+export const weekDays = [
+  "Bazar ertəsi",
+  "Çərşənbə axşamı",
+  "Çərşənbə",
+  "Cümə axşamı",
+  "Cümə",
+  "Şənbə",
+  "Bazar",
+];
+
+export const monthNames = [
+  "Yanvar",
+  "Fevral",
+  "Mart",
+  "Aprel",
+  "May",
+  "İyun",
+  "İyul",
+  "Avqust",
+  "Sentyabr",
+  "Oktyabr",
+  "Noyabr",
+  "Dekabr",
+];
+
+export const eventTypes = {
+  lesson: {
+    label: "Dərs",
+    dot: "bg-emerald-500",
+    badge: "bg-emerald-50 text-emerald-700 border-emerald-100",
+  },
+  lab: {
+    label: "Lab",
+    dot: "bg-blue-500",
+    badge: "bg-blue-50 text-blue-700 border-blue-100",
+  },
+  task: {
+    label: "Tapşırıq",
+    dot: "bg-amber-500",
+    badge: "bg-amber-50 text-amber-700 border-amber-100",
+  },
+  quiz: {
+    label: "Quiz",
+    dot: "bg-purple-500",
+    badge: "bg-purple-50 text-purple-700 border-purple-100",
+  },
+  exam: {
+    label: "İmtahan",
+    dot: "bg-red-500",
+    badge: "bg-red-50 text-red-700 border-red-100",
+  },
+  project: {
+    label: "Layihə",
+    dot: "bg-orange-500",
+    badge: "bg-orange-50 text-orange-700 border-orange-100",
+  },
+  other: {
+    label: "Digər",
+    dot: "bg-slate-500",
+    badge: "bg-slate-50 text-slate-700 border-slate-100",
+  },
+};

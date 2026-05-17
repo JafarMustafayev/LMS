@@ -1,6 +1,5 @@
 import { useLocation } from "react-router-dom";
 import { subjects } from "../data/datas";
-import { ArrowRight } from "lucide-react";
 
 const routeLabels = {
   "": "Dashboard",

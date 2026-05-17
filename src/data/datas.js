@@ -86,9 +86,3 @@ export const studentProfile = {
   school: "Bakı Liseyi",
   averageScore: 86,
 };
-
-export const calendarEvents = [
-  { id: 1, title: "Riyaziyyat dərsi", date: "2026-05-18", time: "09:00" },
-  { id: 2, title: "Tarix dərsi", date: "2026-05-18", time: "11:00" },
-  { id: 3, title: "Fizika laboratoriya", date: "2026-05-19", time: "14:00" },
-];
