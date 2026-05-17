@@ -51,7 +51,7 @@ export const notificationsSeed = [
     title: "Davamiyyətiniz yeniləndi",
     message: "Aprel ayı davamiyyət məlumatlarınız yeniləndi. Ümumi faiz: 92%.",
     time: "11 May 2026, 14:30",
-    type: "attendance",
+    type: "system",
     read: false,
   },
   {
@@ -93,6 +93,5 @@ export const notificationTypeMeta = {
   course: { icon: "📘", iconClass: "bg-blue-100 text-blue-700" },
   exam: { icon: "◷", iconClass: "bg-violet-100 text-violet-700" },
   grade: { icon: "★", iconClass: "bg-amber-100 text-amber-700" },
-  attendance: { icon: "△", iconClass: "bg-rose-100 text-rose-700" },
   system: { icon: "⚙", iconClass: "bg-slate-100 text-slate-700" },
 };

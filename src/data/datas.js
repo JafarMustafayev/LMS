@@ -62,27 +62,9 @@ export const subjects = [
   },
 ];
 
-export const notifications = [
-  { id: 1, text: "Yeni tapşırıq əlavə edildi.", when: "Bugün, 10:30" },
-  { id: 2, text: "Dərs materialı yükləndi.", when: "Bugün, 09:15" },
-  { id: 3, text: "Quiz nəticəniz hazırdır.", when: "Dünən, 18:45" },
-];
-
-export const attendance = [82, 55, 49, 76, 69, 86, 71, 95, 78];
-
-export const weekDays = ["18", "19", "20", "21", "22", "23", "24"];
-
 export const nextLesson = {
   title: "Proqramlaşdırmaya Giriş",
   topic: "Mövzu: Dəyişənlər və məlumat tipləri",
   time: "17 May 2026 · 10:00 - 11:30",
   mode: "Onlayn dərs",
-};
-
-export const studentProfile = {
-  name: "Aylin Məmmədova",
-  group: "11A",
-  email: "aylin@example.com",
-  school: "Bakı Liseyi",
-  averageScore: 86,
 };

@@ -10,7 +10,6 @@ function SubjectsPage() {
           <article key={subject.id} className="rounded-xl bg-white p-4 shadow">
             <h2 className="text-lg font-semibold">{subject.name}</h2>
             <p className="mt-1 text-sm text-slate-500">Müəllim: {subject.teacher}</p>
-            <p className="text-sm text-slate-500">Davamiyyət: {subject.attendance}</p>
             <p className="text-sm text-slate-500">Bal: {subject.score}</p>
             <Link
               className="mt-3 inline-block rounded-lg bg-brand-500 px-3 py-2 text-sm font-medium text-white"

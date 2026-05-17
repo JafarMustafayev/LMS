@@ -23,7 +23,6 @@ function SubjectDetailPage() {
       <div className="rounded-xl bg-white p-4 shadow">
         <h1 className="text-2xl font-bold">{subject.name}</h1>
         <p className="text-sm text-slate-500">Müəllim: {subject.teacher}</p>
-        <p className="text-sm text-slate-500">Davamiyyət: {subject.attendance}</p>
       </div>
       <SubjectAssignmentsTable assignments={subject.assignments} />
     </div>
