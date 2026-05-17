@@ -6,7 +6,7 @@ import NotificationsTabs from "../components/notifications/NotificationsTabs";
 
 import { notificationsSeed, notificationTabs } from "../data/notificationsData";
 
-const PAGE_SIZE = 5;
+const PAGE_SIZE = 6;
 
 function NotificationsPage() {
   const [items, setItems] = useState(notificationsSeed);
@@ -88,17 +88,10 @@ function NotificationsPage() {
 
   return (
     <div className="space-y-1">
-      {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-        <div>
-          <h1 className="text-3xl font-bold text-slate-900">Bildirişlər</h1>
-        </div>
-      </div>
-
       {/* Content */}
       <div className="grid gap-4 2xl:grid-cols-[1fr_340px]">
         {/* Left */}
-        <div className="flex min-h-175 flex-col rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="flex min-h-190 flex-col rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
           {/* Top */}
           <div className="space-y-4">
             <NotificationsTabs
