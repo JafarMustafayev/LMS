@@ -8,7 +8,7 @@ function MainLayout() {
       <Sidebar />
       <main>
         <DashboardTopbar />
-        <div className="p-3 md:p-5">
+        <div className="p-1.5">
           <Outlet />
         </div>
       </main>

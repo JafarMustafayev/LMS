@@ -13,7 +13,7 @@
     icon: "📝",
     tone: "bg-emerald-50 text-emerald-700",
   },
- 
+
   {
     title: "Ortalama bal",
     value: "87.5",
@@ -63,46 +63,9 @@ export const subjects = [
 ];
 
 export const notifications = [
-  {
-    text: '"Verilənlərin strukturu" mövzusunda tapşırıq əlavə edildi.',
-    when: "2 saat əvvəl",
-  },
-  {
-    text: "Diskret Riyaziyyat fənnindən yeni dərs materialı yükləndi.",
-    when: "5 saat əvvəl",
-  },
-  {
-    text: "Kibertəhlükəsizlik fənnindən quiz imtahanı aktivdir.",
-    when: "1 gün əvvəl",
-  },
-  {
-    text: "Proqramlaşdırma laboratoriyası üçün deadline yaxınlaşır.",
-    when: "3 saat əvvəl",
-  },
-  {
-    text: "“Algoritmlər və mürəkkəblik” üzrə yeni video dərs əlavə olundu.",
-    when: "6 saat əvvəl",
-  },
-  {
-    text: "Süni intellekt dərsinin təqdimat faylı paylaşıldı.",
-    when: "8 saat əvvəl",
-  },
-  {
-    text: "Verilənlər bazası fənnindən aralıq imtahan nəticələri elan edildi.",
-    when: "12 saat əvvəl",
-  },
-  {
-    text: "Mobil tətbiqetmə inkişafı dərsi üçün yeni tapşırıq mövcuddur.",
-    when: "1 gün əvvəl",
-  },
-  {
-    text: "Şəbəkə texnologiyaları üzrə forum müzakirəsi açıldı.",
-    when: "2 gün əvvəl",
-  },
-  {
-    text: "Frontend Development kursunda canlı dərs başlayır.",
-    when: "3 gün əvvəl",
-  },
+  { id: 1, text: "Yeni tapşırıq əlavə edildi.", when: "Bugün, 10:30" },
+  { id: 2, text: "Dərs materialı yükləndi.", when: "Bugün, 09:15" },
+  { id: 3, text: "Quiz nəticəniz hazırdır.", when: "Dünən, 18:45" },
 ];
 
 export const attendance = [82, 55, 49, 76, 69, 86, 71, 95, 78];
