@@ -1,5 +1,5 @@
 export const studentProfile = {
-  avatar: "https://i.pravatar.cc/300?img=12",
+  avatar: "https://i.pravatar.cc/1000?img=12",
 
   name: "Əli Məmmədov",
   role: "Tələbə",

@@ -12,7 +12,7 @@ export const subjects = [
   {
     id: 1,
     title: "Proqramlaşdırmaya Giriş",
-    teacher: "Prof. Şəhla Hüseynzadə",
+    teacher: "Prof. Səfər Abbasov",
     teacherRole: "Baş müəllim",
     description:
       "Bu fənn proqramlaşdırmanın əsas anlayışlarını, alqoritmləri və kod yazma bacarıqlarını inkişaf etdirməyə yönəlmişdir.",
@@ -116,6 +116,44 @@ export const subjects = [
       { title: "Aralıq imtahan", score: 10 },
       { title: "Praktiki layihə", score: 92 },
     ],
+    teacherImage: "https://i.pravatar.cc/1000?img=51",
+
+    chatMessages: [
+      {
+        id: 1,
+        sender: "student",
+        text: "Salam müəllim, Lab 3 üçün deadline nə vaxtdır?",
+        time: "10:15",
+      },
+      {
+        id: 2,
+        sender: "teacher",
+        text: "Salam Əli, Lab 3 üçün deadline cümə günü saat 23:59-dur. Hər hansı sualınız olsa, yaza bilərsiniz.",
+        time: "10:18",
+      },
+      {
+        id: 3,
+        sender: "student",
+        text: "Çox sağ olun müəllim. Format ilə bağlı bir nümunə göndərə bilərsinizmi?",
+        time: "10:20",
+      },
+      {
+        id: 4,
+        sender: "teacher",
+        text: "Əlbəttə, nümunə faylı əlavə etdim. Uğurlar! 🌟",
+        time: "10:23",
+        file: {
+          name: "Lab3_Example.pdf",
+          size: "512 KB",
+        },
+      },
+      {
+        id: 5,
+        sender: "student",
+        text: "Təşəkkürlər! 🙏",
+        time: "10:25",
+      },
+    ],
   },
 
   {
@@ -202,6 +240,45 @@ export const subjects = [
       { title: "SQL Quiz", score: 88 },
       { title: "Lab işi", score: 91 },
       { title: "Aralıq imtahan", score: 76 },
+    ],
+
+    teacherImage: "https://i.pravatar.cc/1000?img=50",
+
+    chatMessages: [
+      {
+        id: 1,
+        sender: "student",
+        text: "Salam müəllim, Lab 3 üçün deadline nə vaxtdır?",
+        time: "10:15",
+      },
+      {
+        id: 2,
+        sender: "teacher",
+        text: "Salam Əli, Lab 3 üçün deadline cümə günü saat 23:59-dur. Hər hansı sualınız olsa, yaza bilərsiniz.",
+        time: "10:18",
+      },
+      {
+        id: 3,
+        sender: "student",
+        text: "Çox sağ olun müəllim. Format ilə bağlı bir nümunə göndərə bilərsinizmi?",
+        time: "10:20",
+      },
+      {
+        id: 4,
+        sender: "teacher",
+        text: "Əlbəttə, nümunə faylı əlavə etdim. Uğurlar! 🌟",
+        time: "10:23",
+        file: {
+          name: "Lab3_Example.pdf",
+          size: "512 KB",
+        },
+      },
+      {
+        id: 5,
+        sender: "student",
+        text: "Təşəkkürlər! 🙏",
+        time: "10:25",
+      },
     ],
   },
 

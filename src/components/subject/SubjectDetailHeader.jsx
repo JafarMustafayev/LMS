@@ -39,7 +39,7 @@ function SubjectDetailHeader({ subject }) {
 
             <div className="mt-3 flex min-w-0 items-center gap-3">
               <img
-                src="https://i.pravatar.cc/100?img=47"
+                src={subject.teacherImage}
                 alt={subject.teacher}
                 className="h-10 w-10 shrink-0 rounded-full object-cover sm:h-12 sm:w-12"
               />
