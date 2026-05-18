@@ -1,7 +1,7 @@
 ﻿import { Grid2X2, List, ChevronDown } from "lucide-react";
 
 import { subjects } from "../data/subjectDatas";
-import SubjectCard from "../components/SubjectCard";
+import SubjectCard from "../components/subject/SubjectCard";
 
 function SubjectsPage() {
   return (

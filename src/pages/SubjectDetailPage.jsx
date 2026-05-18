@@ -1,20 +1,29 @@
-﻿import { useMemo } from "react";
+﻿import { useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import SubjectAssignmentsTable from "../components/SubjectAssignmentsTable";
+
 import { subjects } from "../data/subjectDatas";
+import SubjectDetailHeader from "../components/subject/SubjectDetailHeader";
+import SubjectTabs from "../components/subject/SubjectTabs";
+import SubjectTabContent from "../components/subject/SubjectTabContent";
 
 function SubjectDetailPage() {
   const { subjectId } = useParams();
+  const [activeTab, setActiveTab] = useState("overview");
+
   const subject = useMemo(
-    () => subjects.find((item) => item.id === subjectId),
+    () => subjects.find((item) => String(item.id) === String(subjectId)),
     [subjectId],
   );
 
   if (!subject) {
     return (
-      <div className="rounded-xl bg-white p-6 shadow">
-        <p className="text-slate-600">Fənn tapılmadı.</p>
-        <Link className="mt-3 inline-block text-brand-700" to="/subjects">
+      <div className="rounded-2xl bg-white p-6 shadow-sm">
+        <p className="text-gray-600">Fənn tapılmadı.</p>
+
+        <Link
+          className="mt-3 inline-block font-medium text-blue-600"
+          to="/subjects"
+        >
           Fənlərə qayıt
         </Link>
       </div>
@@ -22,12 +31,12 @@ function SubjectDetailPage() {
   }
 
   return (
-    <div className="space-y-4">
-      <div className="rounded-xl bg-white p-4 shadow">
-        <h1 className="text-2xl font-bold">{subject.name}</h1>
-        <p className="text-sm text-slate-500">Müəllim: {subject.teacher}</p>
-      </div>
-      <SubjectAssignmentsTable assignments={subject.assignments} />
+    <div className="space-y-5">
+      <SubjectDetailHeader subject={subject} />
+
+      <SubjectTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+
+      <SubjectTabContent activeTab={activeTab} subject={subject} />
     </div>
   );
 }

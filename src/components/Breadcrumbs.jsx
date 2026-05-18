@@ -1,5 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { subjects } from "../data/subjectDatas";
+import { Link } from "react-router-dom";
+import { ChevronRight } from "lucide-react";
 
 const routeLabels = {
   "": "Dashboard",
@@ -36,9 +38,17 @@ function Breadcrumbs() {
       currentSubject?.title ??
       formatSubjectName(parts[1]);
     return (
-      <p className="text-sm font-semibold text-slate-700">
-        Fənlərim {">"} {subjectName}
-      </p>
+      <div className="flex items-center gap-2 text-sm">
+        <Link to="/" className="text-gray-500 hover:text-blue-600">
+          Dashboard
+        </Link>
+        <ChevronRight size={16} className="text-gray-400" />
+        <Link to="/subjects" className="text-gray-500 hover:text-blue-600">
+          Fənlərim
+        </Link>
+        <ChevronRight size={16} className="text-gray-400" />
+        <span className="font-semibold text-gray-900">{subjectName}</span>
+      </div>
     );
   }
 
@@ -46,11 +56,13 @@ function Breadcrumbs() {
 
   return (
     <>
-      <i className="ri-image-line text-lg text-green-500"></i>
-      <p className="text-base font-semibold text-slate-900 flex">
-        Dashboard {">"}
-        {current}
-      </p>
+      <div className="flex items-center gap-2 text-sm">
+        <Link to="/" className="text-gray-500 hover:text-blue-600">
+          Dashboard
+        </Link>
+        <ChevronRight size={16} className="text-gray-400" />
+        <span className="font-semibold text-gray-900">{current}</span>
+      </div>
     </>
   );
 }

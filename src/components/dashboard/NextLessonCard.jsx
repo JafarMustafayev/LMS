@@ -5,9 +5,6 @@ function NextLessonCard({ nextLesson }) {
     <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
       <div className="mb-3 flex items-center justify-between">
         <h2 className="text-2xl font-bold text-slate-900">Növbəti dərs</h2>
-        <Link className="text-sm font-semibold text-blue-600" to="/nextLesson">
-          Hamısına bax →
-        </Link>
       </div>
       <div className="rounded-xl border border-blue-100 bg-blue-50 p-4">
         <h3 className="text-xl font-bold leading-tight text-slate-900">
