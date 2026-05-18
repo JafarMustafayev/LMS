@@ -1,11 +1,14 @@
 ﻿import { useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
 import SubjectAssignmentsTable from "../components/SubjectAssignmentsTable";
-import { subjects } from "../data/datas";
+import { subjects } from "../data/subjectDatas";
 
 function SubjectDetailPage() {
   const { subjectId } = useParams();
-  const subject = useMemo(() => subjects.find((item) => item.id === subjectId), [subjectId]);
+  const subject = useMemo(
+    () => subjects.find((item) => item.id === subjectId),
+    [subjectId],
+  );
 
   if (!subject) {
     return (

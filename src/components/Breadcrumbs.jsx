@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { subjects } from "../data/datas";
+import { subjects } from "../data/subjectDatas";
 
 const routeLabels = {
   "": "Dashboard",

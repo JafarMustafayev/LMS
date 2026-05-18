@@ -1,12 +1,9 @@
 import RightSidebar from "../components/dashboard/RightSidebar";
 import StatsGrid from "../components/dashboard/StatsGrid";
 import SubjectsSection from "../components/dashboard/SubjectsSection";
-import {
-  nextLesson,
-  notifications,
-  statCards,
-  subjects,
-} from "../data/datas";
+import { nextLesson, statCards } from "../data/datas";
+import { notificationsSeed } from "../data/notificationsData";
+import { subjects } from "../data/subjectDatas";
 
 function DashboardPage() {
   return (
@@ -17,7 +14,10 @@ function DashboardPage() {
           <SubjectsSection subjects={subjects} />
         </section>
 
-        <RightSidebar nextLesson={nextLesson} notifications={notifications} />
+        <RightSidebar
+          nextLesson={nextLesson}
+          notifications={notificationsSeed}
+        />
       </div>
     </div>
   );
