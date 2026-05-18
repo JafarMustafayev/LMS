@@ -1,8 +1,9 @@
-﻿import Breadcrumbs from "../Breadcrumbs";
+﻿import Breadcrumbs from "./Breadcrumbs";
+import { studentProfile } from "../data/studentDatas";
 
 import { Bell, Mail, Search } from "lucide-react";
 
-function DashboardTopbar() {
+function Navbar() {
   return (
     <header className="flex items-center justify-between gap-4 border border-slate-200 bg-white px-6 py-4 shadow-sm">
       {/* Left */}
@@ -52,9 +53,11 @@ function DashboardTopbar() {
           />
 
           <div>
-            <p className="text-sm font-semibold text-slate-800">Əli Məmmədov</p>
+            <p className="text-sm font-semibold text-slate-800">
+              {studentProfile.firstName} {studentProfile.surname}
+            </p>
 
-            <p className="text-xs text-slate-500">Tələbə</p>
+            <p className="text-xs text-slate-500">{studentProfile.role}</p>
           </div>
         </div>
       </div>
@@ -62,4 +65,4 @@ function DashboardTopbar() {
   );
 }
 
-export default DashboardTopbar;
+export default Navbar;

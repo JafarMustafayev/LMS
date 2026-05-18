@@ -210,7 +210,7 @@ function CalendarPage() {
     const saved = localStorage.getItem("edumonitor-calendar-events");
     return saved ? JSON.parse(saved) : initialEvents;
   });
-  const [currentDate, setCurrentDate] = useState(new Date(2026, 4, 1));
+  const [currentDate, setCurrentDate] = useState(new Date());
   const [view, setView] = useState("month");
   const [search, setSearch] = useState("");
   const [selectedType, setSelectedType] = useState("all");
@@ -219,6 +219,8 @@ function CalendarPage() {
   const [editingId, setEditingId] = useState(null);
   const [form, setForm] = useState(emptyForm);
 
+
+  
   useEffect(() => {
     localStorage.setItem("edumonitor-calendar-events", JSON.stringify(events));
   }, [events]);

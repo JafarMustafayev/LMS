@@ -1,13 +1,21 @@
 import { NavLink } from "react-router-dom";
-import { User, LogOut, Calendar, Bell, Home, Presentation } from "lucide-react";
+import {
+  User,
+  LogOut,
+  Calendar,
+  Bell,
+  Home,
+  Presentation,
+  Bot,
+} from "lucide-react";
 
 const navItems = [
   { to: "/", label: "Ana səhifə", icon: <Home /> },
   { to: "/subjects", label: "Fənlərim", icon: <Presentation /> },
   { to: "/notifications", label: "Bildirişlər", icon: <Bell /> },
   { to: "/calendar", label: "Təqvim", icon: <Calendar /> },
+  { to: "/edubot", label: "EduBot AI", icon: <Bot /> },
 ];
-
 function Sidebar() {
   return (
     <aside className="sticky top-0 z-20 flex h-screen flex-col overflow-y-auto bg-gradient-to-b from-[#012f7a] to-[#012258] p-4 text-slate-100 shadow-xl xl:rounded-none">
@@ -46,6 +54,7 @@ function Sidebar() {
           </span>
           <span>Şəxsi məlumatlar</span>
         </NavLink>
+
         <button
           type="button"
           className="flex min-h-11 w-full items-center gap-3 rounded-xl px-3 py-2 text-left font-semibold text-blue-100 hover:bg-white/10"

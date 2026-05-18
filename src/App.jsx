@@ -11,6 +11,7 @@ import NotificationsPage from "./pages/NotificationsPage";
 import ProfilePage from "./pages/ProfilePage";
 import SubjectDetailPage from "./pages/SubjectDetailPage";
 import SubjectsPage from "./pages/SubjectsPage";
+import EduBotPage from "./pages/EduBotPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="calendar" element={<CalendarPage />} />
           <Route path="notifications" element={<NotificationsPage />} />
           <Route path="profile" element={<ProfilePage />} />
+          <Route path="/edubot" element={<EduBotPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
