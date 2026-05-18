@@ -22,7 +22,7 @@ function Sidebar() {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="sticky top-0 z-50 hidden h-screen flex-col overflow-y-auto bg-gradient-to-b from-[#012f7a] to-[#012258] p-4 text-slate-100 shadow-xl xl:flex">
+      <aside className="fixed inset-y-0 left-0 z-50 hidden w-62 flex-col overflow-y-auto bg-gradient-to-b from-[#012f7a] to-[#012258] p-4 text-slate-100 shadow-xl xl:flex">
         <nav className="space-y-1">
           {navItems.map((item) => (
             <NavLink
@@ -42,8 +42,6 @@ function Sidebar() {
             </NavLink>
           ))}
         </nav>
-
-        
       </aside>
 
       {/* Mobile Bottom Navigation */}

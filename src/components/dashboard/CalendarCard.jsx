@@ -22,29 +22,36 @@ function CalendarCard() {
 
   const firstDate = weekDates[0];
   const lastDate = weekDates[6];
-  const rangeLabel = `${firstDate.getDate()} - ${lastDate.getDate()} ${monthNames[lastDate.getMonth()]} ${lastDate.getFullYear()}`;
+
+  const rangeLabel = `${firstDate.getDate()} - ${lastDate.getDate()} ${
+    monthNames[lastDate.getMonth()]
+  } ${lastDate.getFullYear()}`;
 
   return (
-    <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-      <div className="mb-3 flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-slate-900">Təqvim</h2>
-        <Link className="text-sm font-semibold text-blue-600" to="calendar">
+    <section className="min-w-0 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm sm:p-4">
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+        <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">Təqvim</h2>
+
+        <Link
+          className="text-sm font-semibold text-blue-600 hover:text-blue-700"
+          to="/calendar"
+        >
           Hamısına bax →
         </Link>
       </div>
 
-      <p className="mb-3 text-center text-base font-bold text-slate-800">
+      <p className="mb-3 text-center text-sm font-bold text-slate-800 sm:text-base">
         {rangeLabel}
       </p>
 
-      <div className="grid grid-cols-7 gap-2 text-center">
+      <div className="grid min-w-0 grid-cols-7 gap-1 text-center sm:gap-2">
         {weekDates.map((date) => {
           const isToday = date.toDateString() === today.toDateString();
 
           return (
             <span
               key={date.toISOString()}
-              className={`grid h-9 place-items-center rounded-lg text-xs font-semibold ${
+              className={`grid h-8 min-w-0 place-items-center rounded-lg text-xs font-semibold sm:h-9 ${
                 isToday
                   ? "bg-blue-600 text-white"
                   : "bg-slate-100 text-slate-700"

@@ -4,16 +4,16 @@ import Navbar from "../components/Navbar";
 
 function MainLayout() {
   return (
-    <div className="min-h-dvh w-full max-w-full overflow-x-hidden bg-slate-100 xl:grid xl:grid-cols-[250px_minmax(0,1fr)]">
+    <div className="min-h-screen w-full overflow-x-hidden bg-slate-100">
       <Sidebar />
 
-      <main className="min-w-0 w-full overflow-x-hidden pb-20 pt-14 xl:pb-0 xl:pt-16">
+      <div className="min-w-0 w-full overflow-x-hidden xl:pl-[250px]">
         <Navbar />
 
-        <div className="w-full max-w-full overflow-x-hidden p-2 sm:p-3">
+        <main className="min-w-0 w-full overflow-x-hidden px-2 pb-20 pt-16 sm:px-3 xl:pb-4">
           <Outlet />
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
   );
 }
