@@ -404,7 +404,7 @@ function CalendarPage() {
                   setCurrentDate(date);
                   setView("day");
                 }}
-                className="min-h-[76px] min-w-0 border-b border-r border-slate-200 p-1 text-left transition hover:bg-slate-50 last:border-r-0 sm:min-h-[120px] sm:p-2"
+                className="min-h-22 min-w-0 border-b border-r border-slate-200 p-1 text-left transition hover:bg-slate-50 last:border-r-0  sm:p-2"
                 type="button"
               >
                 <div
@@ -432,13 +432,13 @@ function CalendarPage() {
 
                 {/* Tablet/Desktop: event kartları */}
                 <div className="hidden space-y-1.5 sm:block">
-                  {dayEvents.slice(0, 2).map((event) => (
+                  {dayEvents.slice(0, 1).map((event) => (
                     <EventCard key={event.id} event={event} compact />
                   ))}
 
-                  {dayEvents.length > 2 && (
+                  {dayEvents.length > 1 && (
                     <p className="truncate text-[11px] font-semibold text-slate-400">
-                      +{dayEvents.length - 2} hadisə
+                      +{dayEvents.length - 1} hadisə
                     </p>
                   )}
                 </div>

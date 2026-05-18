@@ -43,15 +43,7 @@ function Sidebar() {
           ))}
         </nav>
 
-        <div className="mt-auto space-y-1 border-t border-white/15 pt-5">
-          <NavLink
-            to="/profile"
-            className="flex min-h-11 items-center gap-3 rounded-xl px-3 py-2 font-semibold text-blue-100 hover:bg-white/10"
-          >
-            <User size={21} />
-            <span>Şəxsi məlumatlar</span>
-          </NavLink>
-        </div>
+        
       </aside>
 
       {/* Mobile Bottom Navigation */}
