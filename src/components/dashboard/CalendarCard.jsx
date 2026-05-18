@@ -28,7 +28,7 @@ function CalendarCard() {
   } ${lastDate.getFullYear()}`;
 
   return (
-    <section className="min-w-0 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm sm:p-4">
+    <section className="min-w-0 rounded-2xl border border-slate-200 shadow-sm bg-white p-3  sm:p-4">
       <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">Təqvim</h2>
 

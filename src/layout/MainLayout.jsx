@@ -10,7 +10,7 @@ function MainLayout() {
       <div className="min-w-0 w-full overflow-x-hidden xl:pl-[250px]">
         <Navbar />
 
-        <main className="min-w-0 w-full overflow-x-hidden px-2 pb-20 pt-16 sm:px-3 xl:pb-4">
+        <main className="min-w-0 w-full overflow-x-hidden px-2 sm:mt-4 pb-20 pt-16 sm:px-3 xl:pb-4">
           <Outlet />
         </main>
       </div>

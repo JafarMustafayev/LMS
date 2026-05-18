@@ -13,7 +13,7 @@ function InfoRow({ label, value }) {
 
 function Card({ title, children }) {
   return (
-    <div className="rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
+    <div className="rounded-2xl border border-slate-200 shadow-smbg-white p-6 shadow-sm ">
       <h2 className="mb-5 text-lg font-semibold text-gray-900">{title}</h2>
       {children}
     </div>
@@ -21,13 +21,12 @@ function Card({ title, children }) {
 }
 
 function ProfilePage() {
-
-  useEffect(()=>{
+  useEffect(() => {
     document.title = "Profil";
-  },[])
+  }, []);
   return (
     <div className="space-y-2">
-      <div className="rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
+      <div className="rounded-2xl border border-slate-200 shadow-smbg-white p-6 shadow-sm ">
         <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-6">
             <div className="relative">

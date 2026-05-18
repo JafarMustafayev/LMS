@@ -2,7 +2,7 @@
 
 function SubjectsSection({ subjects }) {
   return (
-    <section className="w-full min-w-0 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm sm:p-4">
+    <section className="w-full min-w-0 rounded-2xl border border-slate-200 shadow-sm bg-white p-3  sm:p-4">
       <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">
           Fənlərim
@@ -23,7 +23,7 @@ function SubjectsSection({ subjects }) {
           return (
             <article
               key={subject.id}
-              className="min-w-0 rounded-2xl border border-slate-200 p-4 sm:p-5"
+              className="min-w-0 rounded-2xl border border-slate-200 shadow-sm p-4 sm:p-5"
             >
               <div className="flex min-w-0 items-start justify-between gap-3">
                 <div className="min-w-0">

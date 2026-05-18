@@ -15,7 +15,7 @@ function Navbar() {
 
         {/* Search */}
         <div className="hidden min-w-0 flex-1 justify-center md:flex">
-          <label className="flex h-10 w-full max-w-lg items-center gap-2 rounded-2xl border border-slate-200 bg-slate-50 px-3">
+          <label className="flex h-10 w-full max-w-lg items-center gap-2 rounded-2xl border border-slate-200 shadow-sm bg-slate-50 px-3">
             <Search size={16} className="shrink-0 text-slate-400" />
 
             <input

@@ -1,6 +1,6 @@
 ﻿function NotificationsTabs({ tabs, activeTab, counts, onChange, markAllRead }) {
   return (
-    <div className="flex w-full flex-col gap-2 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+    <div className="flex w-full flex-col gap-2 rounded-2xl border border-slate-200 shadow-sm bg-white p-3 shadow-sm sm:flex-row sm:items-center sm:justify-between">
       <div className="flex min-w-0 flex-wrap gap-2">
         {tabs.map((tab) => {
           const isActive = activeTab === tab.key;

@@ -94,7 +94,7 @@ function NotificationsPage() {
       {/* Content */}
       <div className="grid gap-4 2xl:grid-cols-[1fr_340px]">
         {/* Left */}
-        <div className="order-2 flex min-h-190 flex-col rounded-2xl border border-slate-200 bg-white p-4 shadow-sm 2xl:order-1">
+        <div className="order-2 flex min-h-190 flex-col rounded-2xl border border-slate-200 shadow-sm shadow-sm bg-white p-4  2xl:order-1">
           {/* Top */}
           <div className="space-y-4">
             <NotificationsTabs

@@ -1,6 +1,6 @@
 ﻿function NextLessonCard({ nextLesson }) {
   return (
-    <section className="min-w-0 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm sm:p-4">
+    <section className="min-w-0 rounded-2xl border border-slate-200 shadow-sm bg-white p-3 sm:p-4">
       <div className="mb-3 flex items-center justify-between">
         <h2 className="text-xl font-bold text-slate-900 sm:text-2xl">
           Növbəti dərs

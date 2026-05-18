@@ -37,7 +37,7 @@ function SubjectDetailHeader({ subject }) {
               {subject.title}
             </h1>
 
-            <div className="mt-3 flex min-w-0 items-center gap-3 sm:mt-4">
+            <div className="mt-3 flex min-w-0 items-center gap-3">
               <img
                 src="https://i.pravatar.cc/100?img=47"
                 alt={subject.teacher}

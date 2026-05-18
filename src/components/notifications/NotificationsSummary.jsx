@@ -12,7 +12,7 @@
   };
 
   return (
-    <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+    <section className="rounded-2xl border border-slate-200 shadow-sm bg-white p-4 shadow-sm">
       <h2 className="text-xl font-bold text-slate-900">Bildiriş xülasəsi</h2>
 
       <div className="mt-4 flex items-center gap-4">

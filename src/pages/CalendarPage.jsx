@@ -103,7 +103,7 @@ function EventModal({ open, mode, form, setForm, onClose, onSave }) {
               onChange={(event) =>
                 setForm({ ...form, title: event.target.value })
               }
-              className="min-w-0 w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-blue-500"
+              className="min-w-0 w-full rounded-2xl border border-slate-200 shadow-sm  px-4 py-3 outline-none focus:border-blue-500"
               placeholder="Məsələn: Quiz"
             />
           </label>
@@ -117,7 +117,7 @@ function EventModal({ open, mode, form, setForm, onClose, onSave }) {
               onChange={(event) =>
                 setForm({ ...form, subject: event.target.value })
               }
-              className="min-w-0 w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-blue-500"
+              className="min-w-0 w-full rounded-2xl border border-slate-200 shadow-sm  px-4 py-3 outline-none focus:border-blue-500"
               placeholder="Məsələn: Data strukturları"
             />
           </label>
@@ -132,7 +132,7 @@ function EventModal({ open, mode, form, setForm, onClose, onSave }) {
               onChange={(event) =>
                 setForm({ ...form, date: event.target.value })
               }
-              className="min-w-0 w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-blue-500"
+              className="min-w-0 w-full rounded-2xl border border-slate-200 shadow-sm  px-4 py-3 outline-none focus:border-blue-500"
             />
           </label>
 
@@ -145,7 +145,7 @@ function EventModal({ open, mode, form, setForm, onClose, onSave }) {
               onChange={(event) =>
                 setForm({ ...form, type: event.target.value })
               }
-              className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-blue-500"
+              className="w-full rounded-2xl border border-slate-200 shadow-sm  px-4 py-3 outline-none focus:border-blue-500"
             >
               {Object.entries(eventTypes).map(([key, value]) => (
                 <option key={key} value={key}>
@@ -165,7 +165,7 @@ function EventModal({ open, mode, form, setForm, onClose, onSave }) {
               onChange={(event) =>
                 setForm({ ...form, startTime: event.target.value })
               }
-              className="min-w-0 w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-blue-500"
+              className="min-w-0 w-full rounded-2xl border border-slate-200 shadow-sm  px-4 py-3 outline-none focus:border-blue-500"
             />
           </label>
 
@@ -179,7 +179,7 @@ function EventModal({ open, mode, form, setForm, onClose, onSave }) {
               onChange={(event) =>
                 setForm({ ...form, endTime: event.target.value })
               }
-              className="min-w-0 w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-blue-500"
+              className="min-w-0 w-full rounded-2xl border border-slate-200 shadow-sm  px-4 py-3 outline-none focus:border-blue-500"
             />
           </label>
         </div>
@@ -187,7 +187,7 @@ function EventModal({ open, mode, form, setForm, onClose, onSave }) {
         <div className="sticky bottom-0 -mx-4 mt-6 flex justify-end gap-3 border-t border-slate-100 bg-white px-4 pt-4 sm:-mx-6 sm:px-6">
           <button
             onClick={onClose}
-            className="rounded-2xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+            className="rounded-2xl border border-slate-200 shadow-sm  px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50"
             type="button"
           >
             Ləğv et
@@ -376,7 +376,7 @@ function CalendarPage() {
 
   function MonthView() {
     return (
-      <div className="w-full overflow-hidden rounded-2xl border border-slate-200">
+      <div className="w-full overflow-hidden rounded-2xl border border-slate-200 shadow-sm ">
         <div className="grid grid-cols-7 border-b border-slate-200">
           {weekDays.map((day, index) => (
             <div
@@ -463,7 +463,7 @@ function CalendarPage() {
           return (
             <div
               key={dateKey}
-              className="min-h-105 rounded-2xl border border-slate-200 p-3"
+              className="min-h-105 rounded-2xl border border-slate-200 shadow-sm  p-3"
             >
               <button
                 onClick={() => {
@@ -503,7 +503,7 @@ function CalendarPage() {
     const dayEvents = eventsByDate[dateKey] || [];
 
     return (
-      <div className="rounded-2xl border border-slate-200 p-4">
+      <div className="rounded-2xl border border-slate-200 shadow-sm  p-4">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-slate-50 p-4">
           <div>
             <p className="text-sm font-semibold text-slate-500">
@@ -530,8 +530,8 @@ function CalendarPage() {
   }
 
   return (
-    <div className="w-full max-w-full overflow-x-hidden space-y-4">
-      <div className="w-full max-w-full overflow-hidden rounded-3xl border border-slate-200 bg-white p-3 shadow-sm sm:p-5">
+    <div className="w-full max-w-full overflow-x-hidden  space-y-4">
+      <div className="w-full max-w-full overflow-hidden rounded-2xl border border-slate-200 shadow-sm  bg-white p-3  sm:p-5">
         <div className="mb-4 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <div className="flex flex-wrap items-center gap-2">
             <button
@@ -577,9 +577,7 @@ function CalendarPage() {
                   key={key}
                   onClick={() => setView(key)}
                   className={`rounded-lg px-3 py-2 text-xs font-semibold transition sm:px-4 sm:text-sm ${
-                    view === key
-                      ? "bg-blue-600 text-white shadow-sm"
-                      : "text-slate-600"
+                    view === key ? "bg-blue-600 text-white " : "text-slate-600"
                   }`}
                   type="button"
                 >

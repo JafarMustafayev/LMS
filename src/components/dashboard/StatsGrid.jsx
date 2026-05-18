@@ -4,7 +4,7 @@
       {statCards.map((card) => (
         <article
           key={card.title}
-          className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+          className="min-w-0 rounded-2xl border border-slate-200 shadow-sm bg-white p-4 "
         >
           <span
             className={`grid h-9 w-9 shrink-0 place-items-center rounded-full text-xs ${card.tone}`}

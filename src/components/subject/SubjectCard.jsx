@@ -5,7 +5,7 @@ function SubjectCard({ subject }) {
   const Icon = subject.icon;
 
   return (
-    <article className="rounded-xl border border-gray-100 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+    <article className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
       <div className="mb-4 flex items-start justify-between">
         <div
           className={`flex h-12 w-12 items-center justify-center rounded-xl ${subject.iconBg}`}

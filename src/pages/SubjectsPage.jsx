@@ -8,7 +8,7 @@ function SubjectsPage() {
     document.title = "Fənlərim";
   }, []);
   return (
-    <div className="pt-5">
+    <div className="">
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {subjects.map((subject) => (
           <SubjectCard key={subject.id} subject={subject} />
