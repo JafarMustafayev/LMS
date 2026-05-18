@@ -73,8 +73,8 @@ function EventModal({ open, mode, form, setForm, onClose, onSave }) {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 grid place-items-center bg-slate-900/40 px-4 backdrop-blur-sm">
-      <div className="w-full max-w-xl rounded-3xl bg-white p-6 shadow-2xl">
+    <div className="fixed inset-0 z-[9999] overflow-y-auto bg-slate-900/40 px-4 py-4 backdrop-blur-sm sm:py-8">
+      <div className="mx-auto w-full max-w-xl rounded-3xl bg-white p-4 shadow-2xl sm:p-6">
         <div className="mb-5 flex items-center justify-between">
           <div>
             <h3 className="text-xl font-bold text-slate-900">
@@ -184,7 +184,7 @@ function EventModal({ open, mode, form, setForm, onClose, onSave }) {
           </label>
         </div>
 
-        <div className="mt-6 flex justify-end gap-3">
+        <div className="sticky bottom-0 -mx-4 mt-6 flex justify-end gap-3 border-t border-slate-100 bg-white px-4 pt-4 sm:-mx-6 sm:px-6">
           <button
             onClick={onClose}
             className="rounded-2xl border border-slate-200 px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50"
@@ -359,7 +359,7 @@ function CalendarPage() {
             </p>
           </div>
 
-          <div className="hidden shrink-0 items-center gap-1 group-hover:flex">
+          <div className="flex shrink-0 items-center gap-1 sm:opacity-0 sm:transition sm:group-hover:opacity-100">
             <button onClick={() => openEditModal(event)} type="button">
               <Edit3 size={13} />
             </button>
@@ -404,7 +404,11 @@ function CalendarPage() {
                   setCurrentDate(date);
                   setView("day");
                 }}
-                className="min-h-22 min-w-0 border-b border-r border-slate-200 p-1 text-left transition hover:bg-slate-50 last:border-r-0  sm:p-2"
+                className="
+                min-h-[calc(100vh-850px)]
+                md:min-h-[calc(100vh-990px)]
+                lg:min-h-[calc(100vh-980px)] 
+                min-w-0 border-b border-r border-slate-200 p-1 text-left transition hover:bg-slate-50 last:border-r-0  sm:p-2"
                 type="button"
               >
                 <div
