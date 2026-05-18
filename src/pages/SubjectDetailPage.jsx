@@ -1,4 +1,4 @@
-﻿import { useMemo, useState } from "react";
+﻿import { useMemo, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import { subjects } from "../data/subjectDatas";

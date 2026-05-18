@@ -4,8 +4,12 @@ import SubjectsSection from "../components/dashboard/SubjectsSection";
 import { nextLesson, statCards } from "../data/datas";
 import { notificationsSeed } from "../data/notificationsData";
 import { subjects } from "../data/subjectDatas";
+import { useEffect } from "react";
 
 function DashboardPage() {
+  useEffect(() => {
+    document.title = "LMS";
+  }, []);
   return (
     <div className="space-y-4">
       <div className="grid gap-4 2xl:grid-cols-[1fr_360px]">

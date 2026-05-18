@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 
 import NotificationsList from "../components/notifications/NotificationsList";
 import NotificationsSummary from "../components/notifications/NotificationsSummary";
@@ -13,6 +13,9 @@ function NotificationsPage() {
   const [activeTab, setActiveTab] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
 
+  useEffect(() => {
+    document.title = "Bildirişlər";
+  }, []);
   // Counts
   const counts = useMemo(() => {
     const unread = items.filter((item) => !item.read).length;
@@ -91,7 +94,7 @@ function NotificationsPage() {
       {/* Content */}
       <div className="grid gap-4 2xl:grid-cols-[1fr_340px]">
         {/* Left */}
-        <div className="flex min-h-190 flex-col rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="order-2 flex min-h-190 flex-col rounded-2xl border border-slate-200 bg-white p-4 shadow-sm 2xl:order-1">
           {/* Top */}
           <div className="space-y-4">
             <NotificationsTabs
@@ -155,7 +158,7 @@ function NotificationsPage() {
         </div>
 
         {/* Right */}
-        <aside className="space-y-4">
+        <aside className="order-1 space-y-4 2xl:order-2">
           <NotificationsSummary
             total={counts.all}
             unread={counts.unread}

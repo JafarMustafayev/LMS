@@ -219,11 +219,13 @@ function CalendarPage() {
   const [editingId, setEditingId] = useState(null);
   const [form, setForm] = useState(emptyForm);
 
-
-  
   useEffect(() => {
     localStorage.setItem("edumonitor-calendar-events", JSON.stringify(events));
   }, [events]);
+
+  useEffect(() => {
+    document.title = "Təqvim";
+  }, []);
 
   const filteredEvents = useMemo(() => {
     return events.filter((event) => {
@@ -336,19 +338,27 @@ function CalendarPage() {
     const style = eventTypes[event.type] || eventTypes.other;
 
     return (
-      <div className={`group rounded-xl border p-2 ${style.badge}`}>
-        <div className="flex items-start justify-between gap-2">
-          <div className="min-w-0">
-            <p className="truncate text-xs font-bold">{event.title}</p>
+      <div
+        className={`group min-w-0 overflow-hidden rounded-xl border p-2 ${style.badge}`}
+      >
+        <div className="flex min-w-0 items-start justify-between gap-2">
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-[11px] font-bold sm:text-xs">
+              {event.title}
+            </p>
+
             {!compact && event.subject && (
               <p className="mt-0.5 truncate text-[11px] opacity-80">
                 {event.subject}
               </p>
             )}
-            <p className="mt-1 flex items-center gap-1 text-[11px] opacity-80">
-              <Clock size={12} /> {formatEventTime(event)}
+
+            <p className="mt-1 flex min-w-0 items-center gap-1 truncate text-[10px] opacity-80 sm:text-[11px]">
+              <Clock size={11} className="shrink-0" />
+              <span className="truncate">{formatEventTime(event)}</span>
             </p>
           </div>
+
           <div className="hidden shrink-0 items-center gap-1 group-hover:flex">
             <button onClick={() => openEditModal(event)} type="button">
               <Edit3 size={13} />
@@ -362,16 +372,19 @@ function CalendarPage() {
     );
   }
 
+  const shortWeekDays = ["B.e", "Ç.a", "Ç", "C.a", "C", "Ş", "B"];
+
   function MonthView() {
     return (
-      <>
+      <div className="w-full overflow-hidden rounded-2xl border border-slate-200">
         <div className="grid grid-cols-7 border-b border-slate-200">
-          {weekDays.map((day) => (
+          {weekDays.map((day, index) => (
             <div
               key={day}
-              className="border-r border-slate-200 p-3 text-xs font-bold text-slate-700 last:border-r-0 lg:text-sm"
+              className="border-r border-slate-200 p-1.5 text-center text-[10px] font-bold text-slate-700 last:border-r-0 sm:p-3 sm:text-xs lg:text-sm"
             >
-              {day}
+              <span className="sm:hidden">{shortWeekDays[index]}</span>
+              <span className="hidden sm:inline">{day}</span>
             </div>
           ))}
         </div>
@@ -387,15 +400,15 @@ function CalendarPage() {
             return (
               <button
                 key={dateKey + index}
-                onDoubleClick={() => {
+                onClick={() => {
                   setCurrentDate(date);
                   setView("day");
                 }}
-                className="min-h-29 border-b border-r border-slate-200 p-2 text-left transition hover:bg-slate-50 last:border-r-0 lg:min-h-15"
+                className="min-h-[76px] min-w-0 border-b border-r border-slate-200 p-1 text-left transition hover:bg-slate-50 last:border-r-0 sm:min-h-[120px] sm:p-2"
                 type="button"
               >
                 <div
-                  className={`mb-2 inline-grid h-7 w-7 place-items-center rounded-full text-sm font-bold ${
+                  className={`mx-auto mb-1 grid h-6 w-6 place-items-center rounded-full text-xs font-bold sm:mx-0 sm:h-7 sm:w-7 sm:text-sm ${
                     isToday
                       ? "bg-blue-600 text-white"
                       : isSunday
@@ -407,12 +420,24 @@ function CalendarPage() {
                 >
                   {date.getDate()}
                 </div>
-                <div className="space-y-1.5">
+
+                {/* Mobile: yalnız event sayı */}
+                <div className="sm:hidden">
+                  {dayEvents.length > 0 && (
+                    <p className="mx-auto w-fit rounded-full bg-blue-50 px-1.5 py-0.5 text-[9px] font-bold text-blue-600">
+                      {dayEvents.length}
+                    </p>
+                  )}
+                </div>
+
+                {/* Tablet/Desktop: event kartları */}
+                <div className="hidden space-y-1.5 sm:block">
                   {dayEvents.slice(0, 2).map((event) => (
                     <EventCard key={event.id} event={event} compact />
                   ))}
-                  {dayEvents.length > 3 && (
-                    <p className="text-xs font-semibold text-slate-400">
+
+                  {dayEvents.length > 2 && (
+                    <p className="truncate text-[11px] font-semibold text-slate-400">
                       +{dayEvents.length - 2} hadisə
                     </p>
                   )}
@@ -421,7 +446,7 @@ function CalendarPage() {
             );
           })}
         </div>
-      </>
+      </div>
     );
   }
 
@@ -501,13 +526,13 @@ function CalendarPage() {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
-        <div className="mb-5 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex flex-wrap items-center gap-3">
+    <div className="w-full max-w-full overflow-x-hidden space-y-4">
+      <div className="w-full max-w-full overflow-hidden rounded-3xl border border-slate-200 bg-white p-3 shadow-sm sm:p-5">
+        <div className="mb-4 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-wrap items-center gap-2">
             <button
               onClick={goToday}
-              className="rounded-xl border border-slate-200 px-4 py-2 text-sm font-semibold hover:bg-slate-50"
+              className="rounded-xl border border-slate-200 px-3 py-2 text-xs font-semibold hover:bg-slate-50 sm:text-sm"
               type="button"
             >
               Bugün
@@ -516,27 +541,28 @@ function CalendarPage() {
             <div className="flex items-center gap-2">
               <button
                 onClick={goPrevious}
-                className="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 hover:bg-slate-50"
+                className="grid h-9 w-9 place-items-center rounded-xl border border-slate-200 hover:bg-slate-50 sm:h-10 sm:w-10"
                 type="button"
               >
-                <ChevronLeft size={18} />
+                <ChevronLeft size={16} />
               </button>
+
               <button
                 onClick={goNext}
-                className="grid h-10 w-10 place-items-center rounded-xl border border-slate-200 hover:bg-slate-50"
+                className="grid h-9 w-9 place-items-center rounded-xl border border-slate-200 hover:bg-slate-50 sm:h-10 sm:w-10"
                 type="button"
               >
-                <ChevronRight size={18} />
+                <ChevronRight size={16} />
               </button>
             </div>
 
-            <h2 className="flex items-center gap-2 text-2xl font-black text-slate-900">
-              <CalendarDays size={24} className="text-blue-600" />
-              {pageTitle}
+            <h2 className="flex min-w-0 items-center gap-2 text-lg font-black text-slate-900 sm:text-2xl">
+              <CalendarDays size={20} className="shrink-0 text-blue-600" />
+              <span className="truncate">{pageTitle}</span>
             </h2>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2">
             <div className="flex rounded-xl bg-slate-100 p-1">
               {[
                 ["month", "Ay"],
@@ -546,7 +572,7 @@ function CalendarPage() {
                 <button
                   key={key}
                   onClick={() => setView(key)}
-                  className={`rounded-lg px-4 py-2 text-sm font-semibold transition ${
+                  className={`rounded-lg px-3 py-2 text-xs font-semibold transition sm:px-4 sm:text-sm ${
                     view === key
                       ? "bg-blue-600 text-white shadow-sm"
                       : "text-slate-600"
@@ -560,10 +586,10 @@ function CalendarPage() {
 
             <button
               onClick={() => openCreateModal()}
-              className="flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-700"
+              className="flex items-center gap-1.5 rounded-xl bg-blue-600 px-3 py-2 text-xs font-semibold text-white hover:bg-blue-700 sm:px-4 sm:text-sm"
               type="button"
             >
-              <Plus size={18} />
+              <Plus size={16} />
               Yeni hadisə
             </button>
           </div>
@@ -573,7 +599,7 @@ function CalendarPage() {
         {view === "week" && <WeekView />}
         {view === "day" && <DayView />}
 
-        <div className="mt-6 flex flex-wrap items-center gap-5 border-t border-slate-100 pt-5 text-sm text-slate-600">
+        <div className="mt-5 flex flex-wrap items-center gap-3 border-t border-slate-100 pt-4 text-xs text-slate-600 sm:text-sm">
           {Object.entries(eventTypes).map(([key, value]) => (
             <div key={key} className="flex items-center gap-2">
               <span className={`h-2.5 w-2.5 rounded-full ${value.dot}`} />

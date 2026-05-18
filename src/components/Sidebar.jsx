@@ -10,62 +10,78 @@ import {
 } from "lucide-react";
 
 const navItems = [
-  { to: "/", label: "Ana səhifə", icon: <Home /> },
-  { to: "/subjects", label: "Fənlərim", icon: <Presentation /> },
-  { to: "/notifications", label: "Bildirişlər", icon: <Bell /> },
-  { to: "/calendar", label: "Təqvim", icon: <Calendar /> },
-  { to: "/edubot", label: "EduBot AI", icon: <Bot /> },
+  { to: "/", label: "Ana səhifə", icon: <Home size={21} /> },
+  { to: "/subjects", label: "Fənlərim", icon: <Presentation size={21} /> },
+  { to: "/notifications", label: "Bildirişlər", icon: <Bell size={21} /> },
+  { to: "/calendar", label: "Təqvim", icon: <Calendar size={21} /> },
+  { to: "/edubot", label: "EduBot AI", icon: <Bot size={21} /> },
+  { to: "/profile", label: "Profil", icon: <User size={21} /> },
 ];
+
 function Sidebar() {
   return (
-    <aside className="sticky top-0 z-20 flex h-screen flex-col overflow-y-auto bg-gradient-to-b from-[#012f7a] to-[#012258] p-4 text-slate-100 shadow-xl xl:rounded-none">
-      <nav className="space-y-1">
-        {navItems.map((item, index) => (
+    <>
+      {/* Desktop Sidebar */}
+      <aside className="sticky top-0 z-50 hidden h-screen flex-col overflow-y-auto bg-gradient-to-b from-[#012f7a] to-[#012258] p-4 text-slate-100 shadow-xl xl:flex">
+        <nav className="space-y-1">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.label}
+              to={item.to}
+              end={item.to === "/"}
+              className={({ isActive }) =>
+                `flex min-h-11 items-center gap-3 rounded-xl px-3 py-2 font-semibold transition ${
+                  isActive
+                    ? "bg-[#0f5ddf] text-white"
+                    : "text-blue-100 hover:bg-white/10"
+                }`
+              }
+            >
+              {item.icon}
+              <span>{item.label}</span>
+            </NavLink>
+          ))}
+        </nav>
+
+        <div className="mt-auto space-y-1 border-t border-white/15 pt-5">
           <NavLink
-            key={`${item.label}-${index}`}
-            to={item.to}
-            end={item.to === "/"}
-            className={({ isActive }) =>
-              `flex min-h-11 items-center gap-3 rounded-xl px-3 py-2 font-semibold transition ${
-                isActive
-                  ? "bg-[#0f5ddf] text-white"
-                  : "text-blue-100 hover:bg-white/10"
-              }`
-            }
+            to="/profile"
+            className="flex min-h-11 items-center gap-3 rounded-xl px-3 py-2 font-semibold text-blue-100 hover:bg-white/10"
           >
-            {item.icon}
-            <span>{item.label}</span>
-            {item.badge ? (
-              <span className="ml-auto grid h-5 min-w-5 place-items-center rounded-full bg-red-500 px-1 text-[11px] font-bold text-white">
-                {item.badge}
-              </span>
-            ) : null}
+            <User size={21} />
+            <span>Şəxsi məlumatlar</span>
           </NavLink>
-        ))}
+        </div>
+      </aside>
+
+      {/* Mobile Bottom Navigation */}
+      <nav className="fixed inset-x-0 bottom-0 z-[999] w-screen max-w-[100vw] overflow-hidden border-t border-slate-200 bg-white px-1 py-1 shadow-[0_-8px_30px_rgba(15,23,42,0.12)] xl:hidden">
+        <div className="grid w-full grid-cols-6 gap-0">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.label}
+              to={item.to}
+              end={item.to === "/"}
+              className={({ isActive }) =>
+                `min-w-0 rounded-xl px-0.5 py-1.5 text-center transition ${
+                  isActive ? "bg-blue-50 text-[#0f5ddf]" : "text-slate-500"
+                }`
+              }
+            >
+              <div className="mx-auto flex w-full min-w-0 flex-col items-center justify-center gap-0.5">
+                <span className="[&>svg]:h-[16px] [&>svg]:w-[16px]">
+                  {item.icon}
+                </span>
+
+                <span className="block w-full truncate text-[9px] font-semibold leading-tight">
+                  {item.label}
+                </span>
+              </div>
+            </NavLink>
+          ))}
+        </div>
       </nav>
-
-      <div className="mt-auto space-y-1 border-t border-white/15 pt-5">
-        <NavLink
-          to="/profile"
-          className="flex min-h-11 items-center gap-3 rounded-xl px-3 py-2 font-semibold text-blue-100 hover:bg-white/10"
-        >
-          <span>
-            <User />{" "}
-          </span>
-          <span>Şəxsi məlumatlar</span>
-        </NavLink>
-
-        <button
-          type="button"
-          className="flex min-h-11 w-full items-center gap-3 rounded-xl px-3 py-2 text-left font-semibold text-blue-100 hover:bg-white/10"
-        >
-          <span>
-            <LogOut />
-          </span>
-          <span>Çıxış</span>
-        </button>
-      </div>
-    </aside>
+    </>
   );
 }
 

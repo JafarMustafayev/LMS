@@ -1,5 +1,5 @@
 ﻿import { Mail, Phone, Camera, Edit3 } from "lucide-react";
-
+import { useEffect } from "react";
 import { studentProfile } from "../data/studentDatas";
 
 function InfoRow({ label, value }) {
@@ -21,6 +21,10 @@ function Card({ title, children }) {
 }
 
 function ProfilePage() {
+
+  useEffect(()=>{
+    document.title = "Profil";
+  },[])
   return (
     <div className="space-y-2">
       <div className="rounded-2xl bg-white p-6 shadow-sm border border-gray-100">
