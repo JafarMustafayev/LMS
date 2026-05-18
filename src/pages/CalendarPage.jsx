@@ -103,7 +103,7 @@ function EventModal({ open, mode, form, setForm, onClose, onSave }) {
               onChange={(event) =>
                 setForm({ ...form, title: event.target.value })
               }
-              className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-blue-500"
+              className="min-w-0 w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-blue-500"
               placeholder="Məsələn: Quiz"
             />
           </label>
@@ -117,7 +117,7 @@ function EventModal({ open, mode, form, setForm, onClose, onSave }) {
               onChange={(event) =>
                 setForm({ ...form, subject: event.target.value })
               }
-              className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-blue-500"
+              className="min-w-0 w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-blue-500"
               placeholder="Məsələn: Data strukturları"
             />
           </label>
@@ -132,7 +132,7 @@ function EventModal({ open, mode, form, setForm, onClose, onSave }) {
               onChange={(event) =>
                 setForm({ ...form, date: event.target.value })
               }
-              className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-blue-500"
+              className="min-w-0 w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-blue-500"
             />
           </label>
 
@@ -165,7 +165,7 @@ function EventModal({ open, mode, form, setForm, onClose, onSave }) {
               onChange={(event) =>
                 setForm({ ...form, startTime: event.target.value })
               }
-              className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-blue-500"
+              className="min-w-0 w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-blue-500"
             />
           </label>
 
@@ -179,7 +179,7 @@ function EventModal({ open, mode, form, setForm, onClose, onSave }) {
               onChange={(event) =>
                 setForm({ ...form, endTime: event.target.value })
               }
-              className="w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-blue-500"
+              className="min-w-0 w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-blue-500"
             />
           </label>
         </div>
